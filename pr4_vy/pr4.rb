@@ -17,9 +17,9 @@ def horizontal_cut(pie, n, height)
   str = ""
   stopper = height / n
   pie.each do |row|
-    str += "\n" + row
+    str += row
     if (str.count("\n") + 1) == stopper
-      answer << str
+      answer << str << "\n"
       str = ""
     end
   end
@@ -60,7 +60,7 @@ pie = [
   "..o.....",
 ]
 
-n = 4
+n = pie_info(pie)[0]
 
 possible_ways = ways_to_cut(pie, n)
 
